@@ -85,7 +85,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h1 id="倒谱法求共振峰"><a href="#倒谱法求共振峰" class="headerlink" title="倒谱法求共振峰"></a>倒谱法求共振峰</h1><h2 id="一、原理"><a href="#一、原理" class="headerlink" title="一、原理"></a>一、原理</h2><p>语音信号 $x(n)$ 由声门脉冲激励$u(n)$经声道响应$v(n)$滤波得出，即<br>$$x(n)=u(n)*v(n)$$</p>
+<h1 id="倒谱法求共振峰"><a href="#倒谱法求共振峰" class="headerlink" title="倒谱法求共振峰"></a>倒谱法求共振峰</h1><ul>
+<li>参考《语音信号处理实验教程》梁瑞宇版P105</li>
+</ul>
+<h2 id="一、原理"><a href="#一、原理" class="headerlink" title="一、原理"></a>一、原理</h2><p>语音信号 $x(n)$ 由声门脉冲激励$u(n)$经声道响应$v(n)$滤波得出，即<br>$$x(n)=u(n)*v(n)$$</p>
 <p>经过倒谱后，得<br>$$\hat{x}(n)=\hat{u}(n)*\hat{v}(n)$$</p>
 <h3 id="1-FFT"><a href="#1-FFT" class="headerlink" title="1. FFT"></a>1. FFT</h3><p>将信号分帧，以第$i$帧$x_i(n)$为例，它经过傅里叶变换变为$X_i(k)$，计算公式如下</p>
 <p>$$X_i(k)=\sum_{n=0}^{N-1}x_i(n)e^{-j2{\pi}kn/N}$$</p>
@@ -95,6 +98,9 @@
 <blockquote>
 <p>采样频率为16000HZ，基音频率都应低于500HZ，为了留有余量，取16000/550=29，即在倒谱域中第29条谱线之前是反映了包络的系数。</p>
 </blockquote>
+<p><img src="https://s2.ax1x.com/2019/05/15/ET08ts.jpg" alt></p>
+<p>其中$n_0$即为引用中求得的29。窗函数图如下</p>
+<p><img src="https://s2.ax1x.com/2019/05/15/ETwgeg.jpg" alt></p>
 <h4 id="2）倒谱加窗"><a href="#2）倒谱加窗" class="headerlink" title="2）倒谱加窗"></a>2）倒谱加窗</h4><p>$$h_i(n)=\hat{x}_i(n)\times h(n)$$</p>
 <h3 id="4-求频谱包络"><a href="#4-求频谱包络" class="headerlink" title="4. 求频谱包络"></a>4. 求频谱包络</h3><p>因倒谱加窗，再次经过FFT的频谱将变平滑，即成为频谱包络。</p>
 <p>$$H_i(k)= \sum_{n=0}^{N-1}h_i(n)e^{-j2{\pi}kn/N}$$</p>
@@ -104,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/13/倒谱法求共振峰/" data-id="cjvngyjwg0001q0vlss3fdl99" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/13/倒谱法求共振峰/" data-id="cjvop6wvx0001v0vlrhq7oe5q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/信号处理/">信号处理</a></li></ul>
@@ -151,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/13/hello-world/" data-id="cjvngyjvy0000q0vlc2yrpgfh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/13/hello-world/" data-id="cjvop6wvk0000v0vloj8yhr89" class="article-share-link">Share</a>
       
       
     </footer>
